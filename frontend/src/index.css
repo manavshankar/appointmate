@@ -1,68 +1,64 @@
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+body{
+    background-color:white;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+.animate-typing{
+    animation: typing 3s steps(44,end);
+    animation-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+.animate-typing2{
+    animation: typing 3s steps(44,end);
+    animation-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+@keyframes typing {
+    from{width: 0%;}
+    to{width: 100%;}
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+@keyframes animateWaves {
+    0% {
+        background-position-x: 4000px;
+    }
+    100% {
+        background-positon-x: 0px;
+    }
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
+@keyframes animate {
+    0% {
+        background-position-x: -4000px;
+    }
+    100% {
+        background-positon-x: 0px;
+    }
+}
+
+.wave#wave1 {
+    z-index: 19;
+    opacity: 1;
+    animation: animateWaves 10s linear infinite !important;
   }
-  a:hover {
-    color: #747bff;
+  
+  .wave#wave2 {
+    z-index: 19;
+    opacity: 0.5;
+    animation: animate 10s linear infinite !important;
   }
-  button {
-    background-color: #f9f9f9;
+  
+  .wave#wave3 {
+    z-index: 20;
+    opacity: 0.2;
+    animation: animateWaves 5s linear infinite;
   }
-}
+  
+  .wave#wave4 {
+    z-index: 19;
+    opacity: 0.7;
+    animation: animate 5s linear infinite;
+  }
